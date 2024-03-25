@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>297</width>
+    <height>344</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Genel stil kuralları */
+* {
+  background-color: #333333; /* Mavi arka plan */
+  color: #FFFFFF; /* Beyaz yazı */
+}
+
+/* Sekmeler için stil kuralları */
+QTabBar::tab {
+  background-color: #333333; /* Sekmelerin arka plan rengi */
+  color: #ffffff; /* Beyaz yazı rengi */
+  margin-left: 5px; /* Solda 5px boşluk bırak */
+  margin-right: 5px; /* Sağda 5px boşluk bırak */
+  border-right: 1px solid #E0E0E0; /* Kalın separator */
+  border-image: linear-gradient(to right, #E0E0E0 0%, #F5F5F5 50%, #E0E0E0 100%); /* Sekmelerin arasına gölge ekleme */
+}
+
+/* Fare üzerine geldiğinde sekmelerin rengi değişir */
+QTabBar::tab:hover {
+  background-color: #0651ff; /* Fare üzerine gelince arka plan rengi */
+}
+
+/* Seçili sekmenin rengi değişir */
+QTabBar::tab:selected {
+  background-color:#2980b9; /* Seçili sekmenin arka plan rengi */
+}
+
+/* Açılır menü stil kuralları */
+QComboBox, QComboBox::drop-down {
+  border: 1px solid #ccc; /* Kenarlık rengi ve kalınlığı */
+  border-radius: 4px; /* Kenarlık köşeleri yuvarlatma */
+  background-color: #ffffff; /* Açılır menünün arka plan rengi */
+}
+
+/* Seçili öğenin arka plan rengi */
+QComboBox::item:selected {
+  background-color: #eee;
+}
+
+/* Açılır menü ok simgesi */
+QComboBox::down-arrow {
+  image: url(:/siyah/asagi.png); /* Ok simgesi */
+  width: 16px; /* Ok resminin genişliği */
+  height: 16px; /* Ok resminin yüksekliği */
+}
+
+/* Açılır menü öğelerinin hover ve pressed efektleri */
+QComboBox::item:hover {
+  background-color: #f9f9f9;
+}
+
+QComboBox::item:pressed {
+  background-color: #ddd;
+}
+
+/* Giriş kutuları ve açılır menülerin genel stil kuralları */
+ QComboBox {
+  background-color: #ffffff; /* Arka plan rengi beyaz */
+  color: #333333; /* Yazı rengi */
+}
+QLineEdit {
+  background-color: #ffffff; /* Başlangıçta arka plan rengi beyaz */
+}
+
+QLineEdit:!enabled {
+  background-color: #ffff00; /* İçeriği dolu olan QLineEdit'in arka plan rengi sarı */
+}
+
+/* Butonların stil kuralları */
+QPushButton, QToolButton {
+  background-color: #333333; /* Arka plan rengi kırmızı */
+  color: #ffffff; /* Yazı rengi beyaz */
+}
+
+/* Buton hover efekti */
+QPushButton:hover, QToolButton:hover {
+  background-color: #c0392b; /* Hover rengi */
+}
+
+/* Butonların stil kuralları */
+QPushButton, QToolButton {
+  background-color:  #333333; /* Arka plan rengi */
+  color: #ffffff; /* Yazı rengi beyaz */
+  border: 1px solid #b3ff26; /* Kenarlık */
+  border-radius: 4px; /* Kenarlık köşeleri yuvarlatma */
+  padding: 8px 16px; /* Buton içeriği için dolgular */
+}
+
+/* Buton hover efekti */
+QPushButton:hover, QToolButton:hover {
+  background-color: #2980b9; /* Hover rengi */
+  border-color: #2980b9; /* Kenarlık rengi */
+}
+
+/* Buton basılma efekti */
+QPushButton:pressed, QToolButton:pressed {
+  background-color: #1f618d; /* Basılma rengi */
+  border-color: #1f618d; /* Kenarlık rengi */
+}
+
+/* Radyo düğmelerinin stil kuralları */
+QRadioButton {
+  color: #white; /* Yazı rengi */
+}
+
+QRadioButton::indicator {
+  width: 16px; /* Gösterge genişliği */
+  height: 16px; /* Gösterge yüksekliği */
+  border: 2px solid #3498db; /* Kenarlık rengi */
+  border-radius: 8px; /* Gösterge köşeleri yuvarlatma */
+  background-color: #ffffff; /* Arka plan rengi */
+}
+
+QRadioButton::indicator:checked {
+  background-color: #3498db; /* Seçili arka plan rengi */
+  border-color: #3498db; /* Seçili kenarlık rengi */
+}
+
+QRadioButton::indicator:hover {
+  border-color: #2980b9; /* Hover kenarlık rengi */
+}
+
+QRadioButton::indicator:checked:hover {
+  background-color: #2980b9; /* Seçili hover arka plan rengi */
+  border-color: #2980b9; /* Seçili hover kenarlık rengi */
+}
+
+/* QLineEdit stil kuralları */
+QLineEdit {
+  border: 1px solid #ccc; /* Kenarlık rengi ve kalınlığı */
+  border-radius: 4px; /* Kenarlık köşeleri yuvarlatma */
+  /*padding: 6px; /* İçerik dolgusu */
+  background-color: #ffffff; /* Arka plan rengi */
+  color: #333333; /* Yazı rengi */
+}
+
+/* QLineEdit hover efekti */
+QLineEdit:hover {
+  border-color: #3498db; /* Kenarlık rengi */
+}
+
+/* QLineEdit odaklandığında */
+QLineEdit:focus {
+  border-color: #3498db; /* Kenarlık rengi */
+}
+
+/* Etiketlerin (QLabel) stil kuralları */
+
+/* Etiketlerin hover efekti */
+QLabel:hover {
+  color: yellow; /* Hover rengi */
+}
+
+/* Tablo Widget stil kuralları */
+QTableWidget {
+  alternate-background-color: #f5f5f5; /* Alternatif satır arka plan rengi */
+  background-color: #333333; /* Arka plan rengi */
+  color: #ffffff; /* Yazı rengi */
+  selection-background-color: #3498db; /* Seçili arka plan rengi */
+  selection-color: #ffffff; /* Seçili yazı rengi */
+  border: 1px solid #ccc; /* Kenarlık rengi ve kalınlığı */
+  border-radius: 4px; /* Kenarlık köşeleri yuvarlatma */
+  gridline-color: white;
+  gridline-width: 1px; /* Satır ve sütun çizgilerinin kalınlığı */
+}
+
+/* Tablo Widget satır hover efekti */
+QTableWidget::item:hover {
+  background-color: #f0f0f0; /* Satır üzerine gelindiğinde arka plan rengi */
+}
+
+/* Tablo Widget başlık stil kuralları */
+QHeaderView::section {
+  background-color: #333333; /* Başlık arka plan rengi */
+  color: #ffffff; /* Başlık yazı rengi */
+  padding: 4px; /* Başlık dolgusu */
+  border: none; /* Başlık kenarlığı yok */
+  font-weight: bold; /* Kalın yazı tipi */
+  font-size: 11pt; /* 11 punto yazı boyutu */
+}
+
+/* Tablo Widget hücre içeriği */
+QTableWidget QTableWidget::item {
+  font-family: Arial; /* Yazı tipi */
+  font-size: 11pt; /* 11 punto yazı boyutu */
+}
+
+/* Tablo Widget'in içeriğini sığdırma */
+QTableView {
+  font-size: 11pt; /* Yazı boyutu */
+  alternate-background-color: #f5f5f5; /* Alternatif satır arka plan rengi */
+  background-color: #333333; /* Arka plan rengi */
+  color: #ffffff; /* Yazı rengi */
+}
+
+/* Tablo Widget başlık hover efekti */
+QHeaderView::section:hover {
+  background-color: #2980b9; /* Başlık üzerine gelindiğinde arka plan rengi */
+}
+
+/* QGroupBox stil kuralları */
+QGroupBox {
+  border: 1px solid #ccc; /* Kenarlık rengi ve kalınlığı */
+  border-radius: 6px; /* Kenarlık köşeleri yuvarlatma */
+  padding: 6px; /* İçerik dolgusu */
+  background-color: #333333; /* Arka plan rengi */
+  color: #ffffff; /* Yazı rengi */
+}
+
+/* QGroupBox başlık stil kuralları */
+QGroupBox::title {
+  subcontrol-origin: margin; /* Başlık başlangıç noktası */
+  subcontrol-position: top left; /* Başlık pozisyonu */
+  left: 10px; /* Sol boşluk */
+  padding: 0 6px; /* Başlık içeriği için dolgu */
+  background-color: #333333; /* Arka plan rengi */
+  color: #ffffff; /* Yazı rengi */
+}
+
+/* İç içe tablar için stil kuralları */
+QTabWidget::pane {
+  border: 1px solid #ccc; /* Kenarlık rengi ve kalınlığı */
+  background-color: #ffffff; /* Arka plan rengi */
+}
+
+QTabWidget::tab-bar {
+  alignment: center;
+}
+
+QTabBar::tab {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  min-width: 8ex;
+  padding: 4px;
+  border: 1px solid grey; /*#ccc;*/ /* Kenarlık rengi ve kalınlığı */
+  background-color: #f5f5f5; /* Arka plan rengi */
+  color: #333333; /* Yazı rengi */
+}
+
+QTabBar::tab:selected {
+  background-color: #333333; /* Seçili sekmenin arka plan rengi */
+  color: #ffffff; /* Seçili sekmenin yazı rengi */
+}
+
+/* Tablodaki satırlar ve sütunlar arası çizgilerin rengini beyaz ve ince yapma */
+QTableWidget QTableView {
+  gridline-color: white; /* Satır ve sütun çizgilerinin rengi */
+  gridline-width: 1px; /* Satır ve sütun çizgilerinin kalınlığı */
+}
+
+/* QLineEdit içeriğinde yazı varken arka plan rengini sarı yapma */
+/*QLineEdit {
+  background-color: #ffffff; /* Başlangıçta arka plan rengi beyaz }*/
+
+
+/*QLineEdit:focus {
+  background-color: #ffff00; /* İçeriğe odaklandığında arka plan rengi sarı }*/
+
+
+/* QLineEdit içeriği doluyken arka plan rengini sarı yapma */
+
+/* Combobox stil kuralları */
+QComboBox {
+  border: 1px solid #ccc; /* Kenarlık rengi ve kalınlığı */
+  border-radius: 4px; /* Kenarlık köşeleri yuvarlatma */
+  background-color: #ffffff; /* Arka plan rengi */
+}
+
+/* Combobox üzerine gelindiğinde */
+QComboBox:hover {
+  background-color: #ffff00; /* Sarı arka plan rengi */
+}
+
+/* LineEdit stil kuralları */
+QLineEdit {
+  border: 1px solid #ccc; /* Kenarlık rengi ve kalınlığı */
+  border-radius: 4px; /* Kenarlık köşeleri yuvarlatma */
+  background-color: #ffffff; /* Arka plan rengi */
+}
+
+/* LineEdit üzerine gelindiğinde */
+QLineEdit:hover {
+  background-color: #ffff00; /* Sarı arka plan rengi */
+}
+
+/* GroupBox stil kuralları */
+QGroupBox {
+  border: 2px solid grey;/*#ccc;*/ /* Kenarlık rengi ve kalınlığı */
+  border-radius: 6px; /* Kenarlık köşeleri yuvarlatma */
+  padding: 6px; /* İçerik dolgusu */
+  background-color: #333333; /* Arka plan rengi */
+  color: #ffffff; /* Yazı rengi */
+}
+
+/* GroupBox üzerine gelindiğinde */
+QGroupBox:hover {
+  background-color: #ffff00; /* Sarı arka plan rengi */
+color:#ffffff /* Yazı rengi */
+}
+
+/* CheckButton ve RadioButton stil kuralları */
+QCheckBox, QRadioButton {
+  color: #ffffff; /* Yazı rengi */
+}
+
+/* CheckButton ve RadioButton üzerine gelindiğinde */
+QCheckBox:hover, QRadioButton:hover {
+  background-color: #ffff00; /* Sarı arka plan rengi */
+  color: black; /* Yazı rengi */
+  border-radius: 3px; /* Kenarlık köşeleri yuvarlatma */
+  /*padding: 1px; /* İçerik dolgusu */
+}
+
+/*--------------------------------------------------------------------*/
+
+/* StackedWidget ileri ve geri butonlarının stil kuralları */
+QStackedWidget &gt; QAbstractButton {
+  background-color: #333333; /* Arka plan rengi ile aynı renk */
+  border: none; /* Kenarlık yok */
+  width: 0; /* Genişlik sıfır */
+  height: 0; /* Yükseklik sıfır */
+}
+
+/* İleri ve geri butonlarının üzerine gelindiğinde */
+QStackedWidget &gt; QAbstractButton:hover {
+  background-color: #333333; /* Arka plan rengi ile aynı renk */
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Bölge</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_bolge_sayi">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLineEdit" name="lineEdit_bolge_harf">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Sağ Değer</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QLineEdit" name="lineEdit_sag_deger">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Yukarı Değer</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="2">
+       <widget class="QLineEdit" name="lineEdit_yukari_deger">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButton_sil">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Sil</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_hesapla">
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Hesapla</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_sonuc">
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
